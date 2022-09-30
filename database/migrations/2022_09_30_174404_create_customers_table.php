@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string(column: 'NomeCliente', length: 100);
-            $table->char(column: 'CPF', length: 11);
-            $table->string(column:'Email',length:10)->nullable();
+            $table->char(column: 'CPF', length: 14);
+            $table->string(column:'Email')->nullable();
             $table->timestamps();
         });
     }
