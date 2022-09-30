@@ -16,4 +16,15 @@ class Order extends Model
         'fk_IdCliente',
         'fk_IdProduto',
     ];
+
+
+    public function Cliente()
+    {
+        return $this->belongsTo(related: Customer::class);
+    }
+
+    public function Produto()
+    {
+        return $this->belongsTo(related: Product::class);
+    }
 }

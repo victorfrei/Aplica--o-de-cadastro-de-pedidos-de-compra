@@ -9,10 +9,14 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'CodBarra',
         'NomeProduto',
         'ValorUnitario'
     ];
 
+    public function Pedidos()
+    {
+        return $this->hasMany(related: Order::class);
+    }
 }
