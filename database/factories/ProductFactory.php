@@ -17,7 +17,9 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'CodBarra' => fake()->isbn13(),
+            'NomeProduto' => fake()->words(3,true),
+            'ValorUnitario' => fake()->randomFloat(2,15,70)
         ];
     }
 }

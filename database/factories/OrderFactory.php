@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Customer;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,12 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'NumeroPedido' => fake()->numberBetween(0, 99990),
+            'DtPedido' => fake()->dateTime(),
+            'Quantidade' => fake()->randomDigit(),
+            'Customer_id' => Customer::all()->random()->id,
+            'Product_id' => Product::all()->random()->id,
+
         ];
     }
 }
