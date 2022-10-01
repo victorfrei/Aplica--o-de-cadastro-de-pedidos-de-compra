@@ -17,6 +17,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         // ------------- Get All Query Params From Request -------------
+
         $input = $request->query();
 
         //------------- Order By 'asc' or 'desc' and by Table Column Name ---------
@@ -30,13 +31,15 @@ class CustomerController extends Controller
         $operator_filter = array_key_exists('operador_filtro', $input) ? $input['operador_filtro'] : '>';
         $column_filter =  array_key_exists('campo_filtro', $input) ? $input['campo_filtro'] : 'id';
 
-        // -------- Return Customer With Filter, Ordering and a Pagination of 20 Items ----------
+        // -------- Return Customers With Filtering, Ordering and a Pagination of 20 Items ----------
+
         return Customer::where($column_filter, $operator_filter, $filter)->orderBy($column_order, $order)->paginate(20);
     }
 
     public function store(Request $request)
     {
         // ------ Return Created Customer -------
+
         return Customer::create(json_decode($request->getContent(), true));
     }
 
@@ -44,6 +47,7 @@ class CustomerController extends Controller
     public function show($id)
     {
         // ------ Return Customer by ID -------
+
         return Customer::find($id);
     }
 
@@ -51,6 +55,7 @@ class CustomerController extends Controller
     public function update(Request $request, $id)
     {
         // ------ Return Updated Customer if Customer Exists -------
+
         $customer = Customer::find($id);
         if ($customer) {
             $customer->update(json_decode($request->getContent(), true));
@@ -63,6 +68,7 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         // ------ Return Delete Customer Confirmation if Customer Exists -------
+
         return Customer::destroy($id) ?
             response('O Cliente com o ID ' . $id . ' Foi Deletado com Sucesso!!')
             :
