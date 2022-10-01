@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\CustomerController;
+use App\Http\Controllers\api\OrderController;
 use App\Http\Controllers\api\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResources([
     'clientes' => CustomerController::class,
-    'produtos' => ProductController::class
+    'produtos' => ProductController::class,
+    'pedidos' => OrderController::class
 ]);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

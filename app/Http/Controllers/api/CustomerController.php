@@ -28,7 +28,7 @@ class CustomerController extends Controller
         // ----- Filter With Table Column Name, Operator '>' or '>=' or '<' or '<=' or '=' and with data defined by filter --------
 
         $filter = array_key_exists('filtro', $input) ? $input['filtro'] : '0';
-        $operator_filter = array_key_exists('operador_filtro', $input) ? $input['operador_filtro'] : '>';
+        $operator_filter = array_key_exists('operador_filtro', $input) ? $input['operador_filtro'] : '>=';
         $column_filter =  array_key_exists('campo_filtro', $input) ? $input['campo_filtro'] : 'id';
 
         // -------- Return Customers With Filtering, Ordering and a Pagination of 20 Items ----------
