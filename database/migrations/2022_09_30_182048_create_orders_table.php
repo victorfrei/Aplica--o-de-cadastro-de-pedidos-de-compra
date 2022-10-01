@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Schema;
 use Spatie\FlareClient\Http\Client;
 
@@ -16,11 +17,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'NumeroPedido');
-            $table->dateTime(column: 'DtPedido');
+            $table->string(column: 'NumeroPedido')->unique();
+            $table->dateTime(column: 'DtPedido')->default(now());
+            $table->enum('Status', ['Em Aberto', 'Pago', 'Cancelado']);
             $table->smallInteger(column: 'Quantidade');
-            $table->foreignId(column:'Customer_id')->constrained()->onDelete(action:'cascade');
-            $table->foreignId(column:'Product_id')->constrained()->onDelete(action:'cascade');
+            $table->foreignId(column: 'Customer_id')->constrained()->onDelete(action: 'cascade');
+            $table->foreignId(column: 'Product_id')->constrained()->onDelete(action: 'cascade');
             $table->timestamps();
         });
     }

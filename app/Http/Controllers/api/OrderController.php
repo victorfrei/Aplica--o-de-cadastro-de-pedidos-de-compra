@@ -39,8 +39,10 @@ class OrderController extends Controller
 
         try {
             $Order =  Order::create(json_decode($request->getContent(), true));
+
             return response(['msg' => 'O Produto Foi Criado com Sucesso!!', 'data' => $Order]);
         } catch (Exception $e) {
+
             return response(['msg'=>'Não Foi Possivel Criar o Produto, Verifique se todos os campo foram preenchidos! ','Exception Error'=>$e], 400);
         }
     }

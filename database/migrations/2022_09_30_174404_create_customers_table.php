@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string(column: 'NomeCliente', length: 100);
-            $table->char(column: 'CPF', length: 14);
+            $table->char(column: 'CPF', length: 14)->unique();
             $table->string(column:'Email')->nullable();
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'CodBarra',length:20);
+            $table->string(column:'CodBarra',length:20)->unique();
             $table->string(column:'NomeProduto',length:100)->nullable();
             $table->decimal(column:'ValorUnitario');
             $table->timestamps();

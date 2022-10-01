@@ -21,6 +21,7 @@ class OrderFactory extends Factory
         return [
             'NumeroPedido' => fake()->numberBetween(0, 99990),
             'DtPedido' => fake()->dateTime(),
+            'Status'=>fake()->randomElement(['Em Aberto','Pago','Cancelado']),
             'Quantidade' => fake()->numberBetween(1,10),
             'Customer_id' => Customer::all()->random()->id,
             'Product_id' => Product::all()->random()->id,
