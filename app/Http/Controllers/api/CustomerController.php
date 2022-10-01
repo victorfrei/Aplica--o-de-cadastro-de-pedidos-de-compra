@@ -40,7 +40,12 @@ class CustomerController extends Controller
     {
         // ------ Return Created Customer -------
 
-        return Customer::create(json_decode($request->getContent(), true));
+        try {
+            $Customer =  Customer::create(json_decode($request->getContent(), true));
+            return response(['msg' => 'O Produto Foi Criado com Sucesso!!', 'data' => $Customer]);
+        } catch (Exception $e) {
+            return response(['msg'=>'Não Foi Possivel Criar o Produto, Verifique se todos os campo foram preenchidos! ','Exception Error'=>$e], 400);
+        }
     }
 
 
@@ -48,7 +53,9 @@ class CustomerController extends Controller
     {
         // ------ Return Customer by ID -------
 
-        return Customer::find($id);
+        $Customer = Customer::find($id);
+        return $Customer ? $Customer : response('Não Foi Possivel Encontrar o Cliente com o ID ' . $id . ' ( O ID Não Foi Encontrado )!', 404);
+
     }
 
 

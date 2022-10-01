@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use Exception;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -36,7 +37,12 @@ class OrderController extends Controller
     {
         // ------ Return Created Order -------
 
-        return Order::create(json_decode($request->getContent(), true));
+        try {
+            $Order =  Order::create(json_decode($request->getContent(), true));
+            return response(['msg' => 'O Produto Foi Criado com Sucesso!!', 'data' => $Order]);
+        } catch (Exception $e) {
+            return response(['msg'=>'Não Foi Possivel Criar o Produto, Verifique se todos os campo foram preenchidos! ','Exception Error'=>$e], 400);
+        }
     }
 
 
@@ -44,7 +50,9 @@ class OrderController extends Controller
     {
         // ------ Return Order by ID -------
 
-        return Order::find($id);
+        $Order = Order::find($id);
+        return $Order ? $Order : response('Não Foi Possivel Encontrar o Pedido com o ID ' . $id . ' ( O ID Não Foi Encontrado )!', 404);
+
     }
 
 

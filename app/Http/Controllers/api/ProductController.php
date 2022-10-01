@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -33,16 +34,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // ------ Return Created Product -------
-
-        return Product::create(json_decode($request->getContent(), true));
+        try {
+            $Product =  Product::create(json_decode($request->getContent(), true));
+            return response(['msg' => 'O Produto Foi Criado com Sucesso!!', 'data' => $Product]);
+        } catch (Exception $e) {
+            return response(['msg'=>'Não Foi Possivel Criar o Produto, Verifique se todos os campo foram preenchidos! ','Exception Error'=>$e], 400);
+        }
     }
 
 
     public function show($id)
     {
         // ------ Return Product by ID -------
-
-        return Product::find($id);
+        $Product = Product::find($id);
+        return $Product ? $Product : response('Não Foi Possivel Encontrar o Produto com o ID ' . $id . ' ( O ID Não Foi Encontrado )!', 404);
     }
 
 
