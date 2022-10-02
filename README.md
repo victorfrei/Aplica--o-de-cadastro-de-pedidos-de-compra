@@ -265,4 +265,39 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 </tbody>
 </table>
 
+
+
+
+# 📖 Exemplo de Paginação
+
+
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Exemplo de Páginação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>api/clientes?page=1</code></br><code>api/clientes?page=2</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+ <td>❌</td>
+</tr>
+<tr>
+<td>DELETE</td>
+ <td>❌</td>
+</tr>
+</tbody>
+</table>
+
+
+
 <br>[🔝 Voltar ao topo](#Inicio) <br>
