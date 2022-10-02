@@ -26,7 +26,7 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 -   -   deve possuir formulários para criação e atualização de seus itens.
 -   -   deve permitir a deleção de qualquer item de sua lista.
 
-## ⚜️ Linguagens, Frameworks e Versões
+# ⚜️ Linguagens, Frameworks e Versões
 
 -   `PHP`- **8.1.10 (cli)**
 
@@ -34,7 +34,23 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 
 -   `Laravel` - **9.33**
 
-## 🫙 Tabelas do Banco de Dados
+# 💭 Como iniciar a API, Criar as tabelas e popular o Banco de dados?
+
+## ䷀ Criar as tabelas no Banco de Dados
+
+Para criar as tabelas no banco de dados basta digitar o comando <code>php artisan migrate</code>
+
+## 👨‍👩‍👧‍👦 Popular o Banco de Dados
+
+Para popular o Banco de Dados basta digitar o comando <code>php artisan db:seed</code>
+
+## 🎬 Iniciar a API
+
+Para iniciar a API basta digitar o comando <code>php artisan serve</code>
+
+</br>
+
+# 🫙 Tabelas do Banco de Dados
 
 <table>
   <thead>
