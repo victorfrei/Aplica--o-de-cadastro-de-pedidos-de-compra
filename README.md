@@ -34,14 +34,6 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 
 -   `Laravel` - **9.33**
 
-## ☑️ Recomendações
-
--   Adicione um título consistente com o título do conteúdo;
--   Recomendamos que na primeira linha deve ter no máximo 4 palavras;
--   Para descrever com detalhes, usar a descrição do commit;
--   Usar um emoji no início da mensagem de commit representando sobre o commit;
--   Um link precisa ser adicionado em sua forma mais autêntica, ou seja: sem encurtadores de link e links afiliados;
-
 ## 🫙 Tabelas do Banco de Dados
 
 <table>
@@ -168,7 +160,7 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 </tr>
 <td>operador_filtro</td>
 <td>Faz a operação lógica baseado no valor fornecido</td>
-<td><code>=</code></br> <code>></code></br> <code><</code></br><code>>=</code></br><code><=</code></td>
+<td><code>=</code> <code>></code> <code><</code><code>>=</code><code><=</code></td>
 </tr>
 </tbody>
 </table>
@@ -192,13 +184,13 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 <tr>
 <td>ordem</td>
 <td>Faz a ordenação baseado no valor fornecido</td>
-<td><code>asc</code></br><code>desc</code></td>
+<td><code>asc</code><code>desc</code></td>
 </tr>
 </tr>
 </tbody>
 </table>
 
-## ↹ Rotas, Filtros e Ordenações
+## ↹ Rotas da API
 
 <table>
 <thead>
@@ -206,9 +198,7 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 <th>Método</th>
 <th>Rotas</th>
 <th>Filtros</th>
-<th>Exemplo de Filtro</th>
 <th>Ordenações</th>
-<th>Exemplo de Ordenação</th>
 </tr>
 </thead>
 <tbody>
@@ -216,32 +206,60 @@ O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e
 <td>GET</td>
 <td> <code>api/clientes</code></br><code>api/produtos</code></br><code>api/pedidos</code></br><code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
 <td><code>filtro</code></br> <code>campo_filtro</code></br> <code>operador_filtro</code></td>
-<td><code>api/clientes?campo_filtro=CPF&filtro=000.000.000-00&operador_filtro==</code></td>
 <td><code>ordem</code></br> <code>campo_ordem</code></td>
-<td><code>api/produtos?campo_ordem=Quantidade&ordem=desc</code></td>
 </tr>
 <tr>
 <td>POST</td>
 <td> <code>api/clientes</code></br><code>api/produtos</code></br><code>api/pedidos</code></td>
  <td>❌</td>
   <td>❌</td>
-   <td>❌</td>
-    <td>❌</td>
 </tr>
 <tr>
 <td>PUT/PATCH</td>
 <td> <code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
  <td>❌</td>
   <td>❌</td>
-   <td>❌</td>
-    <td>❌</td>
 </tr>
 <tr>
 <td>DELETE</td>
 <td> <code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
  <td>❌</td>
   <td>❌</td>
-   <td>❌</td>
+</tr>
+</tbody>
+</table>
+
+# 🛟 Exemplo de Filtro e Ordenação
+
+
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Exemplo de Filtro</th>
+<th>Exemplo de Ordenação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>api/clientes?campo_filtro=CPF&filtro=000.000.000-00&operador_filtro==</code></td>
+<td><code>api/produtos?campo_ordem=Quantidade&ordem=desc</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>❌</td>
+    <td>❌</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+
+ <td>❌</td>
+    <td>❌</td>
+</tr>
+<tr>
+<td>DELETE</td>
+ <td>❌</td>
     <td>❌</td>
 </tr>
 </tbody>
