@@ -1,66 +1,250 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">
+👨🏾‍💻<br>Teste Para Vaga de Desenvolvimento Web
+</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Inicio
 
-## About Laravel
+O teste foi feito de acordo com os PDF's "Desafio para vaga desenvolvedor PHP" e o "Requisitos" com ênfase ao Back-End:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Desafio para vaga desenvolvedor PHP:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Utilizar as linguagens: PHP (5.2 ou Superior);
+-   Utilizar o framework CodeIgniter ou Laravel;
+-   Camada de frontend independente do backend (API REST + frontend);
+-   Bons padrões de desenvolvimento e código limpo;
+-   Organização dos arquivos dentro do projeto;
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Requisitos:
 
-## Learning Laravel
+-   CRUD de clientes.
+-   CRUD de produtos.
+-   CRUD de pedidos de compra, com status (Em
+    Aberto, Pago ou Cancelado).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Cada CRUD:
+-   -   deve ser filtrável e ordenável por qualquer campo, e possuir paginação de 20 itens.
+-   -   deve possuir formulários para criação e atualização de seus itens.
+-   -   deve permitir a deleção de qualquer item de sua lista.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## ⚜️ Linguagens, Frameworks e Versões
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   `PHP`- **8.1.10 (cli)**
 
-## Laravel Sponsors
+-   `Composer` - **2.4.2**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   `Laravel` - **9.33**
 
-### Premium Partners
+## ☑️ Recomendações
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+-   Adicione um título consistente com o título do conteúdo;
+-   Recomendamos que na primeira linha deve ter no máximo 4 palavras;
+-   Para descrever com detalhes, usar a descrição do commit;
+-   Usar um emoji no início da mensagem de commit representando sobre o commit;
+-   Um link precisa ser adicionado em sua forma mais autêntica, ou seja: sem encurtadores de link e links afiliados;
 
-## Contributing
+## 🫙 Tabelas do Banco de Dados
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<table>
+  <thead>
+    <tr>
+      <th>Clientes</th>
+      <th>Tipo de Dado</th>
+      <th>Nullable</th>
+    </tr>
 
-## Code of Conduct
+  </thead>
+ <tbody>
+    <tr>
+      <td>NomeCliente</td>
+      <td><code>Varchar(100)</code></td>
+      <td>❌</td>
+</tr>
+<tr>
+      <td>CPF</td>
+      <td><code>Char(14)</code></td>
+      <td>❌</td>
+</tr>
+<tr>
+<td>Email</td>
+      <td><code>Varchar</code></td>
+      <td>✅</td>
+      </tr>
+</tbody>
+</table>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<table>
+  <thead>
+    <tr>
+      <th>Produtos</th>
+      <th>Tipo de Dado</th>
+      <th>Nullable</th>
+    </tr>
+  </thead>
+ <tbody>
+ <tr>
+      <td>CodBarra</td>
+      <td><code>Varchar(20)</code></td>
+       <td>❌</td>
+</tr>
+<tr>
+<td>NomeProduto</td>
+      <td><code>Varchar(100)</code></td>
+       <td>✅</td>
+</tr>
+<tr>
+<td>ValorUnitario</td>
+      <td><code>Decimal</code></td>
+       <td>❌</td>
+</tr>
+</tbody>
+</table>
 
-## Security Vulnerabilities
+<table>
+  <thead>
+    <tr>
+      <th>Pedidos</th>
+      <th>Tipo de Dado</th>
+      <th>Nullable</th>
+    </tr>
+  </thead>
+ <tbody>
+<tr>
+       <td>NumeroPedido</td>
+      <td><code>Int</code></td>
+       <td>❌</td>
+    </tr>
+    <tr>      
+       <td>DtPedido</td>
+      <td><code>DateTime</code></td>
+       <td>❌</td>
+    </tr>
+    <tr>
+      <tr>
+       <td>Status</td>
+      <td><code>Enum</code></td>
+       <td>❌</td>
+      </tr>
+   <tr>
+       <td>Quantidade</td>
+      <td><code>SmallInteger</code></td>
+       <td>❌</td>
+      </tr>
+   <tr>
+       <td>Customer_id</td>
+      <td><code>BigInt Unsigned</code></td>
+       <td>❌</td>
+</tr>
+   <tr>
+       <td>Product_id</td>
+      <td><code>BigInt Unsigned</code></td>
+       <td>❌</td>
+    </tr>
+    
+  </tbody>
+</table>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 👀 Filtros e Ordenação em Detalhes
 
-## License
+## 🗄️ Filtro
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<table>
+<thead>
+<tr>
+<th>Query Params</th>
+<th>Descrição</th>
+<th>Valores Aceitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>campo_filtro</td>
+<td>Filtra o banco de dados baseado na coluna fornecida</td>
+<td>Nome da coluna para a tabela em questão, ex: Se for Clientes, CPF seria um valor válido!</td>
+</tr>
+<tr>
+<td>filtro</td>
+<td>Faz a filtragem baseado no valor fornecido</td>
+<td>Ex: Se o Campo Especificado for o CPF então "300.000.000-00" seria um valor valido</td>
+</tr>
+<td>operador_filtro</td>
+<td>Faz a operação lógica baseado no valor fornecido</td>
+<td><code>=</code></br> <code>></code></br> <code><</code></br><code>>=</code></br><code><=</code></td>
+</tr>
+</tbody>
+</table>
+
+## 🪢 Ordenação
+
+<table>
+<thead>
+<tr>
+<th>Query Params</th>
+<th>Descrição</th>
+<th>Valores Aceitos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>campo_ordem</td>
+<td>Ordena o banco de dados baseado na coluna fornecida</td>
+<td>Nome da coluna para a tabela em questão, ex: Se for Produtos, ValorUnitario seria um valor válido!</td>
+</tr>
+<tr>
+<td>ordem</td>
+<td>Faz a ordenação baseado no valor fornecido</td>
+<td><code>asc</code></br><code>desc</code></td>
+</tr>
+</tr>
+</tbody>
+</table>
+
+## ↹ Rotas, Filtros e Ordenações
+
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Rotas</th>
+<th>Filtros</th>
+<th>Exemplo de Filtro</th>
+<th>Ordenações</th>
+<th>Exemplo de Ordenação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td> <code>api/clientes</code></br><code>api/produtos</code></br><code>api/pedidos</code></br><code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
+<td><code>filtro</code></br> <code>campo_filtro</code></br> <code>operador_filtro</code></td>
+<td><code>api/clientes?campo_filtro=CPF&filtro=000.000.000-00&operador_filtro==</code></td>
+<td><code>ordem</code></br> <code>campo_ordem</code></td>
+<td><code>api/produtos?campo_ordem=Quantidade&ordem=desc</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td> <code>api/clientes</code></br><code>api/produtos</code></br><code>api/pedidos</code></td>
+ <td>❌</td>
+  <td>❌</td>
+   <td>❌</td>
+    <td>❌</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td> <code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
+ <td>❌</td>
+  <td>❌</td>
+   <td>❌</td>
+    <td>❌</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td> <code>api/clientes/:id</code></br><code>api/produtos/:id</code></br><code>api/pedidos/:id</code></td>
+ <td>❌</td>
+  <td>❌</td>
+   <td>❌</td>
+    <td>❌</td>
+</tr>
+</tbody>
+</table>
+
+<br>[🔝 Voltar ao topo](#Inicio) <br>
